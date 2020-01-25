@@ -4,6 +4,7 @@
   <title>Bootstrap 4 Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -11,10 +12,33 @@
 </head>
 <body>
 
-<div class="container-fluid">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p>
-</div>
+  <div class="container-fluid">
+    <h1>My First Bootstrap Page</h1>
+    <p>This is some text.</p>
+  </div>
+
+
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+
 
 
 <!---Carousal-->
@@ -56,16 +80,62 @@
   </div>
 
 
-  <div class="card">
-    <div class="card-body">Basic card</div>
-  </div>
-  <div class="card">
-    <div class="card-body">Basic card</div>
-  </div>
-  <div class="card">
-    <div class="card-body">Basic card</div>
-  </div>
 
+
+        <!------------------ Hover Effect Style : Demo - 2 --------------->
+        <div class="container mt-40">
+          <h3 class="text-center">Hover Effect Style : Demo - 2</h3>
+          <div class="row mt-30">
+              <div class="col-md-4 col-sm-6">
+                  <div class="box2">
+                      <img src="http://bestjquery.com/tutorial/hover-effect/demo193/images/img-1.jpg">
+                      <div class="box-content">
+                          <div class="inner-content">
+                              <h3 class="title">Williamson</h3>
+                              <span class="post">Web Developer</span>
+                              <ul class="icon">
+                                  <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                  <li><a href="#"><i class="fa fa-link"></i></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                  <div class="box2">
+                      <img src="http://bestjquery.com/tutorial/hover-effect/demo193/images/img-2.jpg">
+                      <div class="box-content">
+                          <div class="inner-content">
+                              <h3 class="title">Kristiana</h3>
+                              <span class="post">Web Designer</span>
+                              <ul class="icon">
+                                  <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                  <li><a href="#"><i class="fa fa-link"></i></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                  <div class="box2">
+                      <img src="http://bestjquery.com/tutorial/hover-effect/demo193/images/img-3.jpg">
+                      <div class="box-content">
+                          <div class="inner-content">
+                              <h3 class="title">Kristiana</h3>
+                              <span class="post">Web Designer</span>
+                              <ul class="icon">
+                                  <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                  <li><a href="#"><i class="fa fa-link"></i></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+
+  
 
 
 </body>
