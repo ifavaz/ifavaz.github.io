@@ -89,5 +89,24 @@ body {
 .medhu {
 
     vertical-align: middle;
+    align-items: center;
 
+}
+
+
+
+.lib-panel {
+    margin-bottom: 20Px;
+    width: fit-content;
+    padding: 10px;
+}
+
+.lib-panel img {
+    width: 150px;
+    background-color: transparent;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, .10);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .10);
 }
