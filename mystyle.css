@@ -39,7 +39,9 @@ body {
 
 
 
-.nav {
-    background-color: #000000;
-    border-color: #E7E7E7;
-}
+/* Modify the backgorund color */ 
+.navbar-custom { 
+    background-color: blue; 
+
+} 
+.navbar-text {  color: white; } 
