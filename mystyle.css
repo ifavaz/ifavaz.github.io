@@ -38,8 +38,10 @@ body {
 
 /* Modify the backgorund color */
 
+
 .navbar-custom {
-    background-color: rgb(19, 121, 255);
+    background-color: #00adef;
+    padding: 0;
 }
 
 .navbar-custom a {
@@ -82,4 +84,10 @@ body {
 
 #social-em:hover {
     color: #f39c12;
+}
+
+.medhu {
+
+    vertical-align: middle;
+
 }
