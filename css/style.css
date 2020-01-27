@@ -121,7 +121,10 @@ ol {
 -----------------------*/
 
 .table {
-    background-color: white;
+  
+    background-size: 1624px 100px;
+    background-repeat: no-repeat;
+    background-image: url("tbbak.jpg");
     margin-bottom: 0em;
 }
 
