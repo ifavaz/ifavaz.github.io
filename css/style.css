@@ -51,9 +51,11 @@ h4,
 h5,
 h6 {
     margin: 0;
-    color: #111111;
-    font-weight: 400;
+    color: #ffffff;
+    font-weight: 500;
+    font-weight: bold;
     font-family: "Muli", sans-serif;
+
 }
 
 h1 {
@@ -81,9 +83,9 @@ h6 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
     font-family: "Muli", sans-serif;
-    color: #636363;
+    color: #ffffff;
     font-weight: 400;
     line-height: 26px;
     margin: 0 0 15px 0;
@@ -710,6 +712,19 @@ ol {
     margin-left: 16px;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 30px;
+    line-height: 30px;
+    /* Vertically center the text there */
+    background-color: #000000;
+}
+
+
+
 .nav-item .nav-depart .depart-btn .depart-hover {
     position: absolute;
     width: 100%;
@@ -981,7 +996,7 @@ ol {
 -----------------------*/
 
 .banner-section {
-    padding: 80px 50px;
+    padding: 20px 450px;
 }
 
 .single-banner {
