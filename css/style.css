@@ -55,7 +55,6 @@ h6 {
     font-weight: 500;
     font-weight: bold;
     font-family: "Muli", sans-serif;
-
 }
 
 h1 {
@@ -121,7 +120,6 @@ ol {
 -----------------------*/
 
 .table {
-  
     background-size: 1624px 100px;
     background-repeat: no-repeat;
     background-image: url("tbbak.jpg");
@@ -726,8 +724,6 @@ ol {
     background-color: #000000;
 }
 
-
-
 .nav-item .nav-depart .depart-btn .depart-hover {
     position: absolute;
     width: 100%;
@@ -999,7 +995,7 @@ ol {
 -----------------------*/
 
 .banner-section {
-    padding: 20px 450px;
+    padding: 20px 350px;
 }
 
 .single-banner {
@@ -4367,4 +4363,8 @@ ol {
         padding-left: 15px;
         padding-right: 15px;
     }
+}
+
+.row {
+    flex-wrap: nowrap;
 }
