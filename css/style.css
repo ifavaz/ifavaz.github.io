@@ -4368,3 +4368,9 @@ ol {
 .row {
     flex-wrap: nowrap;
 }
+
+.prodtxt {
+
+    color: black;
+    text-align: justify;
+}
