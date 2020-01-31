@@ -119,6 +119,24 @@
     height: 100px;
 }
 
+/* ------- Products ---- */
+
+.prods {
+
+    text-align: justify;
+}
+
+.prods.modal-content {
+
+    background-color: blue;
+}
+
+.prodtxt {
+    font-size: 12px;
+    text-align: justify;
+}
+
+
 
 /*---------------------
   Helper CSS
