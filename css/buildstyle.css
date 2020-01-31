@@ -154,6 +154,7 @@ width: 50%;
     .row {
 
         margin-right: 0px;
+        margin-left: 0px;
     }
 
     .socicon {
@@ -200,6 +201,7 @@ width: 50%;
 
         flex-wrap: nowrap;
         margin-right: 0px;
+        margin-left: 0px;
     }
 
 
@@ -235,6 +237,7 @@ width: 50%;
 
         flex-wrap: nowrap;
         margin-right: 0px;
+        margin-left: 0px;
     }
 
     .topsocial {
