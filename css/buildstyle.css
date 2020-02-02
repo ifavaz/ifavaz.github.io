@@ -140,6 +140,11 @@
 }
 
 
+.prodimg {
+
+    width: 200px;
+}
+
 
 /*---------------------
   Helper CSS
@@ -199,6 +204,13 @@
     .modal-content {
         width: fit-content;
     }
+
+    .prodimg {
+
+        width: 120px;
+        
+    }
+
 }
 
 
@@ -241,6 +253,16 @@
         padding-top: 15px;
         padding-right: 30px;
     }
+    
+    .modal-dialog {
+
+        max-width: 500px;;
+    }
+
+    .prodimg {
+
+        width: 120px;
+    }
 
 }
 
@@ -279,7 +301,7 @@
 
     .prods.modal-content {
 
-        width: 150%;
+        width: 100%;
     }
 
     .modal-dialog {
