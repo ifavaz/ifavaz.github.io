@@ -10,6 +10,8 @@
     background: #000;
 }
 
+
+
 .loader {
     width: 40px;
     height: 40px;
@@ -93,7 +95,7 @@
 
 .bg-dark {
 
-    background-color: #00adef !important;
+    background-color: #A9A9A9 !important;
 }
 
 
@@ -145,6 +147,11 @@
     width: 200px;
 }
 
+
+.btn-primary {
+    background-color: #bd2130;
+
+}
 
 /*---------------------
   Helper CSS
