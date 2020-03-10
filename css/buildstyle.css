@@ -108,6 +108,16 @@
 }
 
 
+.blur img{
+    transition: 1s ease;
+    }
+    
+    .blur img:hover {
+    -webkit-filter: blur(5px);
+    transition: 1s ease;
+    }
+
+
 /* ------- Footer */
 
 .footer {
