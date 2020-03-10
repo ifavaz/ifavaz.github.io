@@ -102,7 +102,7 @@
 /* ... carousel ... */
 
 .carousel-caption {
-
+font-family: 'Great Vibes', cursive;
     right: 50%;
     bottom: 170px;
 }
@@ -131,7 +131,16 @@
   
   }
   .carousel-caption h3 {
-      padding: .5em;
+
+      font-size: 60px;
+      font-style: oblique;
+      color: red;
+      padding-right: 90px;
+}
+ .carousel-caption h4 {
+     padding-left: 0px;
+      font-size: 40px;
+     color: #000;
   }
   .carousel .icon-container {
       display: inline-block;
