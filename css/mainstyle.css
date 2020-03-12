@@ -77,30 +77,39 @@ body {
 
 /* --Logo Banner- */
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    
-
-
-}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    
-    .bann.col-6 {
+@media screen and (max-width: 600px) {
 
+    .bann.col-6 {
         max-width: 100%;
         flex: 0rem;
     }
 
 
+    .socicon {
+
+        text-align-last: center;
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .topsocial {
+        font-size: 20px;
+
+    }
+
+    .logo {
+
+        width: 60%;
+    }
+
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+
+/* Medium devices  */
+@media screen and (min-width:601px) and (max-width:900px){
 
     .bann.col-6 {
 
@@ -114,45 +123,62 @@ body {
         margin-left: 0px;
     }
 
- }
+    .socicon {
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
+        text-align-last: right;
+        padding-top: 20px;
+        padding-right: 50px;
+        width: 100%;
+    }
 
+    .topsocial {
 
+        font-size: 30px;
 
+    }
 
+    .logo {
 
-
-/* --Social Top- */
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
-
-
-.topsocial {
-    font-size: 15px;
+        width: 90%;
+    }
 
 }
 
-.socicon {
 
-    text-align-last: centre;
-    padding-top: 20px;
+
+
+/* Large devices  */
+@media only screen and (min-width: 901px) {
+
+    .bann.col-6 {
+
+        max-width: 50%;
+    }
+
+    .bann.row {
+
+        flex-wrap: nowrap;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .socicon {
+
+        text-align-last: right;
+        padding-top: 20px;
+        padding-right: 50px;
+        width: 100%;
+    }
+
+    .topsocial {
+
+        font-size: 30px;
+
+    }
+
+    .logo {
+
+        width: 90%;
+    }
+
 }
-
-
-

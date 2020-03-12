@@ -262,11 +262,6 @@ font-family: 'Great Vibes', cursive;
 
 @media (max-width: 787px) {
 
-    .col-6 {
-
-        max-width: 100%;
-        flex: 0rem;
-    }
 
     .col-4 {
 
@@ -275,17 +270,9 @@ font-family: 'Great Vibes', cursive;
         padding: 15px;
     }
 
-    .row {
 
-        margin-right: 0px;
-        margin-left: 0px;
-    }
 
-    .socicon {
 
-        text-align-last: center;
-        padding-top: 10px;
-    }
 
     .footer {
 
@@ -324,10 +311,7 @@ font-family: 'Great Vibes', cursive;
 -----------------------*/
 @media (min-width: 769px) and (max-width: 991px) {
 
-    .col-6 {
 
-        max-width: 50%;
-    }
 
     .col-4 {
 
@@ -348,12 +332,7 @@ font-family: 'Great Vibes', cursive;
 
     }
 
-    .socicon {
 
-        text-align-last: right;
-        padding-top: 15px;
-        padding-right: 30px;
-    }
     
     .modal-dialog {
 
@@ -376,10 +355,7 @@ font-family: 'Great Vibes', cursive;
 
 @media (min-width: 992px) {
 
-    .col-6 {
 
-        max-width: 50%;
-    }
 
     .row {
 
@@ -393,12 +369,7 @@ font-family: 'Great Vibes', cursive;
 
     }
 
-    .socicon {
 
-        text-align-last: right;
-        padding-top: 30px;
-        padding-right: 30px;
-    }
 
     .prods.modal-content {
 
