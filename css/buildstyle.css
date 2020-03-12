@@ -2,19 +2,6 @@
 
 
 
-/* ------- Nav Menu */
-
-.navbar {
-    padding: 0;
-
-}
-
-.bg-dark {
-
-    background-color: #A9A9A9 !important;
-}
-
-
 /* ... carousel ... */
 
 .carousel-caption {
@@ -121,18 +108,7 @@ font-family: 'Great Vibes', cursive;
     }
 
 
-/* ------- Footer */
 
-.footer {
-
-    background-color: black;
-    font-size: 10px;
-    color: white;
-    padding-right: 50px;
-    padding-top: 20px;
-    text-align: right;
-    height: 100px;
-}
 
 /* ------- Products ---- */
 
@@ -274,15 +250,7 @@ font-family: 'Great Vibes', cursive;
 
 
 
-    .footer {
 
-        background-color: black;
-        font-size: 10px;
-        color: white;
-        text-align: center;
-        height: 100px;
-        padding-top: 50px;
-    }
 
     .modal-dialog {
 
@@ -319,18 +287,7 @@ font-family: 'Great Vibes', cursive;
         flex: 33.33%;
     }
 
-    .row {
 
-        flex-wrap: nowrap;
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-
-
-    .topsocial {
-        font-size: 20px;
-
-    }
 
 
     
@@ -357,17 +314,6 @@ font-family: 'Great Vibes', cursive;
 
 
 
-    .row {
-
-        flex-wrap: nowrap;
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-
-    .topsocial {
-        font-size: 25px;
-
-    }
 
 
 

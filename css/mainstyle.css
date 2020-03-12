@@ -1,9 +1,12 @@
 /* Main Doc */
 
+html,
 body {
 
     font-family: 'Dosis', sans-serif;
     background-image: url('tbbak1.jpg');
+    height: 100%;
+    margin: 0;
 }
 
 /* Preloder|DO NOT TOUCH! */
@@ -74,9 +77,38 @@ body {
     }
 }
 
+/*NaBar Navigation*/
 
-/* --Logo Banner- */
+.navbar {
+    padding: 0;
 
+}
+
+.bg-dark {
+
+    background-color: #A9A9A9 !important;
+}
+
+/* ------- Footer */
+
+.wrapper {
+    min-height: 100%;
+}
+
+.footer {
+
+    background-color: black;
+    font-size: 14px;
+    color: white;
+    padding-right: 50px;
+    padding-top: 20px;
+    text-align: right;
+    height: 50px;
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------*/
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
@@ -86,6 +118,12 @@ body {
         flex: 0rem;
     }
 
+    .bann.row {
+
+
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 
     .socicon {
 
@@ -104,12 +142,22 @@ body {
         width: 60%;
     }
 
+    .footer {
+
+        font-size: 12px;
+        text-align: center;
+
+    }
+
+
+
+
 }
 
 
 
 /* Medium devices  */
-@media screen and (min-width:601px) and (max-width:900px){
+@media screen and (min-width:601px) and (max-width:900px) {
 
     .bann.col-6 {
 
@@ -148,7 +196,8 @@ body {
 
 
 /* Large devices  */
-@media only screen and (min-width: 901px) {
+
+@media screen and (min-width:901px) and (max-width:1200px) {
 
     .bann.col-6 {
 
@@ -165,7 +214,46 @@ body {
     .socicon {
 
         text-align-last: right;
-        padding-top: 20px;
+        padding-top: 30px;
+        padding-right: 50px;
+        width: 100%;
+    }
+
+    .topsocial {
+
+        font-size: 30px;
+
+    }
+
+    .logo {
+
+        width: 90%;
+    }
+
+
+}
+
+
+
+/* Extra Large devices  */
+@media only screen and (min-width: 1201px) {
+
+    .bann.col-6 {
+
+        max-width: 50%;
+    }
+
+    .bann.row {
+
+        flex-wrap: nowrap;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .socicon {
+
+        text-align-last: right;
+        padding-top: 50px;
         padding-right: 50px;
         width: 100%;
     }
