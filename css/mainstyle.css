@@ -112,7 +112,7 @@ body {
 .carousel-caption {
     font-family: 'Great Vibes', cursive;
     right: 50%;
-    bottom: 170px;
+    bottom: 120px;
 }
 
 .rowed {
@@ -148,12 +148,14 @@ body {
     font-style: oblique;
     color: red;
     padding-right: 90px;
+    text-shadow: 2px 2px 5px red;
 }
 
 .carousel-caption h4 {
     padding-left: 0px;
     font-size: 40px;
-    color: #000;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
 }
 
 .carousel .icon-container {
@@ -418,6 +420,30 @@ h1 {
     .logo {
 
         width: 90%;
+    }
+
+
+     /*carosel items*/
+
+    .carousel-caption {
+
+        bottom: 50px;
+    }
+
+     .carousel-caption h3 {
+
+        font-size: 50px;
+        font-style: oblique;
+        color: red;
+        padding-right: 90px;
+        width: 200%;
+    }
+
+    .carousel-caption h4 {
+        padding-left: 0px;
+        font-size: 30px;
+        color: #000;
+        width: 200%;
     }
 
 
