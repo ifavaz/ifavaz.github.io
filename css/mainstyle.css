@@ -208,6 +208,38 @@ h1 {
 }
 
 
+/* Index Ban List*/
+
+.babb.col-4 {
+
+    max-width: 100%;
+    flex: auto;
+    padding: 15px;
+}
+
+
+.blur img {
+    transition: 1s ease;
+}
+
+.blur img:hover {
+    -webkit-filter: blur(5px);
+    transition: 1s ease;
+}
+
+.banimg {
+
+    width: 50%;
+
+}
+
+.bann1.row {
+
+    padding: 30px;
+    padding-right: 20%;
+    padding-left: 20%;
+
+}
 
 /* ---------------------------------------------------------------------------------------------*/
 
@@ -368,7 +400,6 @@ h1 {
 
         font-size: 50px;
         font-style: oblique;
-        color: red;
         padding-right: 90px;
         width: 200%;
     }
@@ -376,10 +407,24 @@ h1 {
     .carousel-caption h4 {
         padding-left: 0px;
         font-size: 30px;
-        color: #000;
         width: 200%;
     }
 
+    /* Index Ban List*/
+
+    .babb.col-4 {
+
+        max-width: 33%;
+
+    }
+
+    .bann1.row {
+
+        padding: 30px;
+        padding-right: 5%;
+        padding-left: 5%;
+
+    }
 
 
 }
@@ -423,18 +468,17 @@ h1 {
     }
 
 
-     /*carosel items*/
+    /*carosel items*/
 
     .carousel-caption {
 
         bottom: 50px;
     }
 
-     .carousel-caption h3 {
+    .carousel-caption h3 {
 
         font-size: 50px;
         font-style: oblique;
-        color: red;
         padding-right: 90px;
         width: 200%;
     }
@@ -442,8 +486,24 @@ h1 {
     .carousel-caption h4 {
         padding-left: 0px;
         font-size: 30px;
-        color: #000;
         width: 200%;
+    }
+
+
+    /* Index Ban List*/
+
+    .babb.col-4 {
+
+        max-width: 33%;
+
+    }
+
+    .bann1.row {
+
+        padding: 30px;
+        padding-right: 5%;
+        padding-left: 5%;
+
     }
 
 
@@ -483,6 +543,22 @@ h1 {
     .logo {
 
         width: 90%;
+    }
+
+    /* Index Ban List*/
+
+    .babb.col-4 {
+
+        max-width: 33%;
+
+    }
+
+    .bann1.row {
+
+        padding: 50px;
+        padding-right: 2%;
+        padding-left: 2%;
+
     }
 
 }
