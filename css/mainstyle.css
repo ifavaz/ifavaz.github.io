@@ -245,6 +245,52 @@ font-family: 'Great Vibes', cursive;
     .carr.w-100 {
 
     min-height: 500px;
+         display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url('p_ev1.jpg');
+  width: 500px; /* Width of new image */
+
+  padding-left: 600px; /* Equal to width of new image */
+
+}
+
+      .carr.w-100.two {
+
+    min-height: 500px;
+         display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url('p_ev2.jpg');
+  width: 500px; /* Width of new image */
+
+  padding-left: 600px; /* Equal to width of new image */
+
+}
+
+      .carr.w-100.three {
+
+    min-height: 500px;
+         display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url('p_ev3.jpg');
+  width: 500px; /* Width of new image */
+
+  padding-left: 600px; /* Equal to width of new image */
+
+}
+
+   .carr.w-100.four {
+
+    min-height: 500px;
+         display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url('p_ev4.jpg');
+  width: 500px; /* Width of new image */
+
+  padding-left: 600px; /* Equal to width of new image */
 
 }
 
