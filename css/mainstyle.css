@@ -241,10 +241,19 @@ h1 {
 
 }
 
+
+
+
+
 /* ---------------------------------------------------------------------------------------------*/
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
+
+    .wrapper {
+        width: 600px;
+    }
+
 
     .bann.col-6 {
         max-width: 100%;
@@ -279,6 +288,7 @@ h1 {
 
         font-size: 12px;
         text-align: center;
+        width: 600px;
 
     }
 
@@ -348,6 +358,20 @@ h1 {
     .carousel-caption {
 
         right: 5%;
+    }
+
+
+ /* Products Page */
+
+    .prodban {
+
+        min-height: 600px;
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background-image: url('prodcs1.jpg');
+        padding-left: 600px;
+
     }
 
 
