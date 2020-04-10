@@ -274,12 +274,22 @@ h1 {
     content: "Collapse All";
 }
 
+
+.prodpadds {
+    padding: 10px;
+
+}
+
 .prodrow {
     display: flex;
     flex-wrap: wrap;
 }
 
+.prodcrds {
 
+padding: 15px;
+height: 120px;
+}
 
 
 /* ---------------------------------------------------------------------------------------------*/
@@ -503,6 +513,12 @@ h1 {
 
     }
 
+    .prodcrds {
+
+        padding: 15px;
+        height: 300px;
+        }
+
 }
 
 
@@ -592,7 +608,14 @@ h1 {
     .prodpadds {
         padding: 5px;
 
-    }
+            }
+
+            .prodcrds {
+
+                padding: 15px;
+                height: 200px;
+                }
+
 
 }
 
@@ -660,5 +683,13 @@ h1 {
         padding: 5px;
 
     }
+
+
+    .prodcrds {
+
+        padding: 15px;
+        height: 200px;
+        }
+
 
 }
