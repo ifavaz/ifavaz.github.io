@@ -274,9 +274,17 @@ h1 {
     content: "Collapse All";
   }
   
-
+  .prodrow {
+display: flex;
+flex-wrap: wrap;
+  }
 
 /* ---------------------------------------------------------------------------------------------*/
+
+
+
+
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
@@ -481,6 +489,11 @@ h1 {
 
     }
 
+    /* products */
+
+    .prodrow {
+        flex-wrap: nowrap;
+          }
 
 }
 
@@ -561,6 +574,11 @@ h1 {
 
     }
 
+ /* products */
+
+ .prodrow {
+    flex-wrap: nowrap;
+      }
 
 }
 
@@ -615,5 +633,11 @@ h1 {
         padding-left: 2%;
 
     }
+
+     /* products */
+
+     .prodrow {
+        flex-wrap: nowrap;
+          }
 
 }
