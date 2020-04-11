@@ -291,7 +291,42 @@ padding: 15px;
 height: 120px;
 }
 
+.prodtxt {
+    font-size: 12px;
+    text-align: justify;
+}
 
+
+.prodimg {
+
+    width: 200px;
+}
+
+.prods {
+
+    text-align: justify;
+}
+
+
+.prods.modal-content {
+
+    background-color: #242021;
+    color: white;
+    text-align: justify;
+ 
+}
+
+
+.btn-primary {
+    background-color: #bd2130;
+    
+
+}
+
+.btn-primary:hover {
+    background-color: #bd2131d2;
+ 
+  }
 /* ---------------------------------------------------------------------------------------------*/
 
 
