@@ -333,10 +333,13 @@ h1 {
 
 /* ---------- abt us -----*/
 
-.column {
+.abtcolumn {
     width: 100%;
 }
 
+.abtpiccolumn {
+    width: 100%;
+}
 
 /* ---------------------------------------------------------------------------------------------*/
 
@@ -565,12 +568,16 @@ h1 {
         height: 300px;
     }
 
-    .column {
-        float: left;
-        width: 50%;
-        padding: 10px;
+   
+.abtcolumn {
+    width: 45%;
+    padding: 10px;
+}
 
-    }
+.abtpiccolumn {
+    width: 55%;
+    padding: 10px;
+}
 
 }
 
@@ -669,12 +676,16 @@ h1 {
         height: 200px;
     }
 
-    .column {
-        float: left;
-        width: 50%;
-        padding: 10px;
+     
+.abtcolumn {
+    width: 25%;
+    padding: 10px;
+}
 
-    }
+.abtpiccolumn {
+    width: 75%;
+    padding: 10px;
+}
 
 }
 
@@ -756,4 +767,16 @@ h1 {
         padding: 10px;
 
     }
+
+    
+    .abtcolumn {
+        width: 25%;
+        padding: 10px;
+    }
+    
+    .abtpiccolumn {
+        width: 75%;
+        padding: 10px;
+    }
+
 }
