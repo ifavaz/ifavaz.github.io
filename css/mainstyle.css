@@ -287,8 +287,8 @@ h1 {
 
 .prodcrds {
 
-padding: 15px;
-height: 120px;
+    padding: 15px;
+    height: 120px;
 }
 
 .prodtxt {
@@ -313,20 +313,31 @@ height: 120px;
     background-color: #242021;
     color: white;
     text-align: justify;
- 
+
 }
 
 
 .btn-primary {
     background-color: #bd2130;
-    
+
 
 }
 
 .btn-primary:hover {
     background-color: #bd2131d2;
- 
-  }
+
+}
+
+
+
+
+/* ---------- abt us -----*/
+
+.column {
+    width: 100%;
+}
+
+
 /* ---------------------------------------------------------------------------------------------*/
 
 
@@ -552,7 +563,14 @@ height: 120px;
 
         padding: 15px;
         height: 300px;
-        }
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+
+    }
 
 }
 
@@ -643,14 +661,20 @@ height: 120px;
     .prodpadds {
         padding: 5px;
 
-            }
+    }
 
-            .prodcrds {
+    .prodcrds {
 
-                padding: 15px;
-                height: 200px;
-                }
+        padding: 15px;
+        height: 200px;
+    }
 
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+
+    }
 
 }
 
@@ -724,7 +748,12 @@ height: 120px;
 
         padding: 15px;
         height: 200px;
-        }
+    }
 
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
 
+    }
 }
