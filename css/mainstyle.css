@@ -352,9 +352,7 @@ h1 {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
 
-    .wrapper {
-        
-    }
+    .wrapper {}
 
 
     .bann.col-6 {
@@ -390,7 +388,7 @@ h1 {
 
         font-size: 12px;
         text-align: center;
-       
+
 
     }
 
@@ -474,10 +472,17 @@ h1 {
         background-image: url('prodcs1.jpg');
         background-repeat: no-repeat;
         background-size: contain;
-        
+
 
     }
 
+    .textwrapL {
+        width: 100%;
+    }
+
+    .textwrapR {
+        width: 100%;
+    }
 
 }
 
@@ -572,9 +577,9 @@ h1 {
     }
 
 
-     /* Products Page */
+    /* Products Page */
 
-     .prodban {
+    .prodban {
 
         min-height: 170px;
         display: block;
@@ -583,7 +588,7 @@ h1 {
         background-image: url('prodcs.jpg');
         background-repeat: no-repeat;
         background-size: contain;
-        
+
 
     }
 
@@ -592,17 +597,31 @@ h1 {
         min-width: 500px;
     }
 
-   
-.abtcolumn {
-    width: 45%;
+
+    /* .abtcolumn {
+    width: 65%;
     padding: 10px;
 }
 
 .abtpiccolumn {
-    width: 55%;
+    width: 35%;
     padding: 10px;
-}
+}*/
 
+    .textwrapR {
+
+        float: right;
+        margin: 10px;
+        width: 50%;
+    }
+
+
+    .textwrapL {
+
+        float: left;
+        margin: 10px;
+        width: 50%;
+    }
 }
 
 
@@ -699,6 +718,7 @@ h1 {
         padding: 15px;
         height: 200px;
     }
+
     .prodban {
 
         min-height: 200px;
@@ -716,15 +736,30 @@ h1 {
         min-width: 800px;
     }
 
-     
-.abtcolumn {
-    width: 25%;
+
+      /* .abtcolumn {
+    width: 65%;
     padding: 10px;
 }
 
 .abtpiccolumn {
-    width: 75%;
+    width: 35%;
     padding: 10px;
+}*/
+
+.textwrapR {
+
+    float: right;
+    margin: 10px;
+    width: 45%;
+}
+
+
+.textwrapL {
+
+    float: left;
+    margin: 10px;
+    width: 45%;
 }
 
 }
@@ -811,7 +846,7 @@ h1 {
         background-image: url('prodcs.jpg');
         background-repeat: no-repeat;
         background-size: contain;
-        
+
 
     }
 
@@ -827,15 +862,30 @@ h1 {
 
     }
 
-    
-    .abtcolumn {
-        width: 25%;
-        padding: 10px;
-    }
-    
-    .abtpiccolumn {
-        width: 75%;
-        padding: 10px;
-    }
+
+       /* .abtcolumn {
+    width: 65%;
+    padding: 10px;
+}
+
+.abtpiccolumn {
+    width: 35%;
+    padding: 10px;
+}*/
+
+.textwrapR {
+
+    float: right;
+    margin: 10px;
+    width: 30%;
+}
+
+
+.textwrapL {
+
+    float: left;
+    margin: 10px;
+    width: 30%;
+}
 
 }
