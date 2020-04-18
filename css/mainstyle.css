@@ -107,6 +107,18 @@ body {
     height: 50px;
 }
 
+.pagefooter {
+
+    background: black;
+    color: white;
+    font-size: small;
+}
+
+.fas {
+    font-size: small;
+    color: white;
+}
+
 
 /* ... carousel ... */
 
@@ -737,7 +749,7 @@ h1 {
     }
 
 
-      /* .abtcolumn {
+    /* .abtcolumn {
     width: 65%;
     padding: 10px;
 }
@@ -747,20 +759,20 @@ h1 {
     padding: 10px;
 }*/
 
-.textwrapR {
+    .textwrapR {
 
-    float: right;
-    margin: 10px;
-    width: 45%;
-}
+        float: right;
+        margin: 10px;
+        width: 45%;
+    }
 
 
-.textwrapL {
+    .textwrapL {
 
-    float: left;
-    margin: 10px;
-    width: 45%;
-}
+        float: left;
+        margin: 10px;
+        width: 45%;
+    }
 
 }
 
@@ -863,7 +875,7 @@ h1 {
     }
 
 
-       /* .abtcolumn {
+    /* .abtcolumn {
     width: 65%;
     padding: 10px;
 }
@@ -873,19 +885,19 @@ h1 {
     padding: 10px;
 }*/
 
-.textwrapR {
+    .textwrapR {
 
-    float: right;
-    margin: 10px;
-    width: 30%;
-}
+        float: right;
+        margin: 10px;
+        width: 30%;
+    }
 
 
-.textwrapL {
+    .textwrapL {
 
-    float: left;
-    margin: 10px;
-    width: 30%;
-}
+        float: left;
+        margin: 10px;
+        width: 30%;
+    }
 
 }
