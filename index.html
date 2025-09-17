@@ -26,6 +26,32 @@
             padding: 0;
         }
 
+
+        
+                /* Add this to your existing CSS */
+        .dhivehi-text {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Noto Sans Thaana', 'MV Faseyha', 'Faruma', Arial, sans-serif;
+        }
+        
+        .article-title {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Noto Sans Thaana', 'MV Faseyha', 'Faruma', Arial, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            text-decoration: none;
+        }
+
+        .article-summary {
+            direction: rtl;
+            text-align: right;
+        }
+ 
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -159,6 +185,27 @@
             color: #6b7280;
         }
 
+
+/* Add to existing CSS in both files */
+.article-card.read {
+    opacity: 0.6;
+    border-left-color: #94a3b8;
+    background: #f8f9fa;
+}
+
+.article-card.read .article-title {
+    color: #6b7280;
+}
+
+.stats {
+    padding: 1rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+        
         .stats {
             padding: 1rem;
             text-align: center;
@@ -221,17 +268,17 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-
-<div class="nav-links" style="margin-top: 1rem;">
-    <a href="archive.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 6px;">📚 View Archive</a>
-</div>
+    
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>📰 My News Reader</h1>
-            <div class="last-updated">Last updated: <span id="lastUpdated">9/17/2025, 3:04:29 PM</span></div>
-        </header>
+    <h1>Khabaru Boatu</h1>
+    <div class="last-updated">Last updated: <span id="lastUpdated">9/17/2025, 3:04:29 PM</span></div>
+    <div class="nav-links" style="margin-top: 1rem;">
+        <a href="archive.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 6px;">📚 View Archive</a>
+    </div>
+</header>
 
         <div class="search-bar">
             <input 
@@ -430,83 +477,92 @@
         </div>
     </div>
 
-    <script>
-        // Sample data structure for n8n integration
-        const articlesData = [
-            {
-                title: "Scientists Develop Revolutionary AI Architecture That Mimics Human Brain",
-                url: "https://example.com/ai-breakthrough",
-                source: "TechNews",
-                date: "2 hours ago",
-                summary: "Researchers at Stanford have unveiled a new neural network architecture that closely mimics the human brain's processing patterns, showing 40% improvement in efficiency over traditional models.",
-                keywords: ["breakthrough", "ai", "research", "neural", "network"]
-            }
-            // Add more articles here...
-        ];
-
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        const articlesContainer = document.getElementById('articlesContainer');
-        const noResults = document.getElementById('noResults');
-        const articleCount = document.getElementById('articleCount');
-
-        function updateArticleCount() {
-            const visibleArticles = document.querySelectorAll('.article-card:not([style*="display: none"])').length;
-            articleCount.textContent = visibleArticles;
+    // Updated script for index.html - replace the existing <script> section
+<script>
+    // Reading tracking functionality
+    function markAsRead(articleCard) {
+        const url = articleCard.querySelector('.article-title').href;
+        let readArticles = JSON.parse(localStorage.getItem('readArticles') || '[]');
+        
+        if (!readArticles.includes(url)) {
+            readArticles.push(url);
+            localStorage.setItem('readArticles', JSON.stringify(readArticles));
         }
+        
+        articleCard.classList.add('read');
+    }
 
-        function filterArticles() {
-            const query = searchInput.value.toLowerCase();
-            const articles = document.querySelectorAll('.article-card');
-            let visibleCount = 0;
-
-            articles.forEach(article => {
-                const title = article.dataset.title || '';
-                const source = article.dataset.source || '';
-                const content = article.dataset.content || '';
-                
-                const matches = title.includes(query) || 
-                               source.includes(query) || 
-                               content.includes(query);
-
-                if (matches) {
-                    article.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    article.style.display = 'none';
-                }
-            });
-
-            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-            articlesContainer.style.display = visibleCount === 0 ? 'none' : 'block';
-            updateArticleCount();
-        }
-
-        searchInput.addEventListener('input', filterArticles);
-
-        // Initialize
-        updateArticleCount();
-
-        // Auto-refresh functionality (optional)
-        function checkForUpdates() {
-            // Your n8n webhook or API endpoint to check for new articles
-            // fetch('/api/articles')...
-        }
-
-        // Check for updates every 5 minutes (optional)
-        // setInterval(checkForUpdates, 5 * 60 * 1000);
-
-        // Add click tracking
+    // Mark previously read articles on page load
+    function markPreviouslyRead() {
+        const readArticles = JSON.parse(localStorage.getItem('readArticles') || '[]');
         document.querySelectorAll('.article-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if (e.target.tagName !== 'A') {
-                    const link = card.querySelector('.article-title');
-                    if (link) {
-                        window.open(link.href, '_blank');
-                    }
-                }
-            });
+            const url = card.querySelector('.article-title').href;
+            if (readArticles.includes(url)) {
+                card.classList.add('read');
+            }
         });
-    </script>
+        updateArticleCount();
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const articlesContainer = document.getElementById('articlesContainer');
+    const noResults = document.getElementById('noResults');
+    const articleCount = document.getElementById('articleCount');
+
+    function updateArticleCount() {
+        const visibleArticles = document.querySelectorAll('.article-card:not([style*="display: none"])');
+        const unreadCount = Array.from(visibleArticles).filter(card => !card.classList.contains('read')).length;
+        articleCount.textContent = `${visibleArticles.length} (${unreadCount} unread)`;
+    }
+
+    function filterArticles() {
+        const query = searchInput.value.toLowerCase();
+        const articles = document.querySelectorAll('.article-card');
+        let visibleCount = 0;
+
+        articles.forEach(article => {
+            const title = article.dataset.title || '';
+            const source = article.dataset.source || '';
+            const content = article.dataset.content || '';
+            
+            const matches = title.includes(query) || 
+                           source.includes(query) || 
+                           content.includes(query);
+
+            if (matches) {
+                article.style.display = 'block';
+                visibleCount++;
+            } else {
+                article.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        articlesContainer.style.display = visibleCount === 0 ? 'none' : 'block';
+        updateArticleCount();
+    }
+
+    searchInput.addEventListener('input', filterArticles);
+
+    // Add click tracking with read marking
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            markAsRead(card);
+            if (e.target.tagName !== 'A') {
+                const link = card.querySelector('.article-title');
+                if (link) {
+                    window.open(link.href, '_blank');
+                }
+            }
+        });
+    });
+
+    // Initialize - mark previously read articles
+    markPreviouslyRead();
+</script>
+
+
+    
 </body>
 </html>
