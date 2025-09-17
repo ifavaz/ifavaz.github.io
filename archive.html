@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Archive - My News Reader</title>
+    <meta name="theme-color" content="#2563eb">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links {
+            margin-top: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.2);
+            margin: 0 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .controls {
+            padding: 1rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-input, .filter-select {
+            padding: 0.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-input:focus, .filter-select:focus {
+            border-color: #667eea;
+        }
+
+        .stats {
+            padding: 1rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .article-item {
+            background: white;
+            margin: 0 0 1px 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid #667eea;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .article-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateX(2px);
+        }
+
+        .article-item.read {
+            opacity: 0.6;
+            border-left-color: #94a3b8;
+        }
+
+        .article-item.read .article-title {
+            color: #6b7280;
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            line-height: 1.4;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .article-title:hover {
+            color: #667eea;
+        }
+
+        .read-status {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .read-status.unread {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .read-status.read {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #6b7280;
+            flex-wrap: wrap;
+        }
+
+        .article-source {
+            background: #f1f5f9;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .pagination {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: white;
+        }
+
+        .pagination button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .pagination button.active {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #6b7280;
+        }
+
+        .spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #6b7280;
+        }
+
+        @media (max-width: 640px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .article-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .pagination {
+                padding: 1rem;
+            }
+            
+            .pagination button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📰 News Archive</h1>
+            <p>Complete history of all your news articles</p>
+            <div class="nav-links">
+                <a href="index.html">← Back to Latest News</a>
+            </div>
+        </header>
+
+        <div class="controls">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Search archive..."
+            >
+            <select id="filterSelect" class="filter-select">
+                <option value="all">All Articles</option>
+                <option value="unread">Unread Only</option>
+                <option value="read">Read Only</option>
+            </select>
+            <select id="sourceFilter" class="filter-select">
+                <option value="all">All Sources</option>
+            </select>
+        </div>
+
+        <div class="stats">
+            <span id="articleCount">Loading...</span> articles in archive
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <div>Loading archive...</div>
+        </div>
+
+        <div id="articlesContainer"></div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No articles found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+        let allArticles = [];
+        let filteredArticles = [];
+        let currentPage = 1;
+        const articlesPerPage = 20;
+
+        // Load archive data
+        async function loadArchive() {
+            try {
+                const response = await fetch('articles-archive.json');
+                if (!response.ok) throw new Error('Archive not found');
+                
+                allArticles = await response.json();
+                
+                // Load read status from localStorage
+                const readArticles = JSON.parse(localStorage.getItem('readArticles') || '[]');
+                allArticles.forEach(article => {
+                    article.read = readArticles.includes(article.url);
+                });
+                
+                populateSourceFilter();
+                filterAndDisplayArticles();
+                
+                document.getElementById('loading').style.display = 'none';
+            } catch (error) {
+                console.error('Error loading archive:', error);
+                document.getElementById('loading').innerHTML = 
+                    '<p>Error loading archive. Make sure articles-archive.json exists.</p>';
+            }
+        }
+
+        function populateSourceFilter() {
+            const sources = [...new Set(allArticles.map(article => article.source))].sort();
+            const sourceFilter = document.getElementById('sourceFilter');
+            
+            sources.forEach(source => {
+                const option = document.createElement('option');
+                option.value = source;
+                option.textContent = source;
+                sourceFilter.appendChild(option);
+            });
+        }
+
+        function filterAndDisplayArticles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const readFilter = document.getElementById('filterSelect').value;
+            const sourceFilter = document.getElementById('sourceFilter').value;
+            
+            filteredArticles = allArticles.filter(article => {
+                const matchesSearch = article.title.toLowerCase().includes(searchTerm) ||
+                                    article.source.toLowerCase().includes(searchTerm);
+                
+                const matchesReadFilter = readFilter === 'all' || 
+                                        (readFilter === 'read' && article.read) ||
+                                        (readFilter === 'unread' && !article.read);
+                
+                const matchesSource = sourceFilter === 'all' || article.source === sourceFilter;
+                
+                return matchesSearch && matchesReadFilter && matchesSource;
+            });
+            
+            currentPage = 1;
+            displayArticles();
+            displayPagination();
+            updateStats();
+        }
+
+        function displayArticles() {
+            const container = document.getElementById('articlesContainer');
+            const startIndex = (currentPage - 1) * articlesPerPage;
+            const endIndex = startIndex + articlesPerPage;
+            const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+            
+            if (articlesToShow.length === 0) {
+                container.innerHTML = '';
+                document.getElementById('noResults').style.display = 'block';
+                return;
+            }
+            
+            document.getElementById('noResults').style.display = 'none';
+            
+            container.innerHTML = articlesToShow.map(article => `
+                <div class="article-item ${article.read ? 'read' : ''}" data-url="${article.url}">
+                    <div class="article-header">
+                        <a href="${article.url}" class="article-title" target="_blank">
+                            ${article.title}
+                        </a>
+                        <span class="read-status ${article.read ? 'read' : 'unread'}">
+                            ${article.read ? 'Read' : 'New'}
+                        </span>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-source">${article.source}</span>
+                        <span class="article-date">${article.dateAdded}</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Add click handlers
+            container.querySelectorAll('.article-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (e.target.tagName !== 'A') {
+                        const link = item.querySelector('.article-title');
+                        markAsRead(item.dataset.url);
+                        window.open(link.href, '_blank');
+                    } else {
+                        markAsRead(item.dataset.url);
+                    }
+                });
+            });
+        }
+
+        function markAsRead(url) {
+            let readArticles = JSON.parse(localStorage.getItem('readArticles') || '[]');
+            if (!readArticles.includes(url)) {
+                readArticles.push(url);
+                localStorage.setItem('readArticles', JSON.stringify(readArticles));
+            }
+            
+            // Update article status
+            const article = allArticles.find(a => a.url === url);
+            if (article) {
+                article.read = true;
+            }
+            
+            // Refresh display
+            filterAndDisplayArticles();
+        }
+
+        function displayPagination() {
+            const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+            const pagination = document.getElementById('pagination');
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            
+            // Previous button
+            html += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})">Previous</button>`;
+            
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+                    html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+                } else if (i === currentPage - 3 || i === currentPage + 3) {
+                    html += '<span>...</span>';
+                }
+            }
+            
+            // Next button
+            html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})">Next</button>`;
+            
+            pagination.innerHTML = html;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            displayArticles();
+            displayPagination();
+            window.scrollTo(0, 0);
+        }
+
+        function updateStats() {
+            const total = filteredArticles.length;
+            const unread = filteredArticles.filter(a => !a.read).length;
+            document.getElementById('articleCount').textContent = 
+                `${total} (${unread} unread)`;
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterAndDisplayArticles);
+        document.getElementById('filterSelect').addEventListener('change', filterAndDisplayArticles);
+        document.getElementById('sourceFilter').addEventListener('change', filterAndDisplayArticles);
+
+        // Load archive on page load
+        loadArchive();
+    </script>
+</body>
+</html>
