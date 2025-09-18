@@ -118,10 +118,13 @@
 
         .article-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transform: translateX(4px);
+            transform: translateX(-4px); /* Changed from 4px to -4px for RTL */
         }
 
         .article-title {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Noto Sans Thaana', 'MV Faseyha', 'Faruma', Arial, sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
             color: #1a202c;
@@ -129,6 +132,20 @@
             line-height: 1.4;
             text-decoration: none;
         }
+
+        .article-card {
+            background: white;
+            margin: 0 0 1px 0;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-right: 4px solid #667eea; /* Add right border for RTL */
+            border-left: none; /* Remove left border for RTL */
+            transition: all 0.2s ease;
+            cursor: pointer;
+            direction: rtl;
+            text-align: right;
+        }
+
 
         .article-title:hover {
             color: #667eea;
@@ -141,6 +158,8 @@
             font-size: 0.85rem;
             color: #6b7280;
             flex-wrap: wrap;
+            direction: rtl;
+            justify-content: flex-start;
         }
 
         .article-source {
@@ -186,25 +205,25 @@
         }
 
 
-/* Add to existing CSS in both files */
-.article-card.read {
-    opacity: 0.6;
-    border-left-color: #94a3b8;
-    background: #f8f9fa;
-}
+        /* Add to existing CSS in both files */
+        .article-card.read {
+            opacity: 0.6;
+            border-left-color: #94a3b8;
+            background: #f8f9fa;
+        }
 
-.article-card.read .article-title {
-    color: #6b7280;
-}
+        .article-card.read .article-title {
+            color: #6b7280;
+        }
 
-.stats {
-    padding: 1rem;
-    text-align: center;
-    color: #6b7280;
-    font-size: 0.9rem;
-    background: white;
-    border-bottom: 1px solid #e2e8f0;
-}
+        .stats {
+            padding: 1rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
         
         .stats {
             padding: 1rem;
